@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\MultiUserLoginController;
 use App\Http\Controllers\UserController;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Route;
@@ -31,6 +32,10 @@ Route::get('/dashboard', function () {
 Route::get('admin/login-form', [AdminController::class, 'showLoginForm'])->name('admin-login-form');
 Route::post('admin/login', [AdminController::class, 'login'])->name('admin-login');
 Route::get('admin/logout', [AdminController::class, 'logout'])->name('admin-logout');
+
+// MultiUser Auth Login Form
+Route::get('multiuserlogin/form', [MultiUserLoginController::class, 'showLoginForm'])->name('multiuserlogin-form');
+Route::post('multiuserlogin', [MultiUserLoginController::class, 'multiuserLogin'])->name('multiuserlogin');
 
 Route::middleware('auth:admin')->group(function () {
     Route::prefix('admin')->group(function () {

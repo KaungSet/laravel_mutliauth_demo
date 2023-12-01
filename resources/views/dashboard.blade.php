@@ -29,3 +29,6 @@
     <a href="{{route('admin-index')}}"><button>Admin Page</button></a>
     <a href="{{route('user-index')}}"><button>User Page</button></a>
 </div>
+<div>
+    <a href="{{route('multiuserlogin-form')}}"><button>MultiUser Login Form</button></a>
+</div>

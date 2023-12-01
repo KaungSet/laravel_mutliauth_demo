@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Traits\AdminLogin;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
+    use AdminLogin;
     public function showLoginForm()
     {
         if (Auth::guard('web')->check() || Auth::guard('admin')->check()) {
